@@ -1,0 +1,972 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>PRO-STO — малиновий спрей від стійкого бруду на склі, плитці та в кутах</title>
+    <meta name="description" content="PRO-STO — спрей для очищення стійкого бруду на склі, плитці, у кутах і швах. 299 грн, акція 1+1=3. Оплата при отриманні.">
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- =====================================================
+         ПІКСЕЛІ. Базовий код стоїть тут, у <head>, і вантажиться
+         ДО скрипта форми. Щоб увімкнути — вставте ID у лапки.
+         ===================================================== -->
+    <script>
+        window.PIXEL_IDS = {
+            facebook: '',   // ID пікселя Meta, напр. '1234567890123456'
+            tiktok:   ''    // ID пікселя TikTok, напр. 'D0ABCDEFGHIJ12345678'
+        };
+    </script>
+
+    <!-- Meta Pixel -->
+    <script>
+    if (window.PIXEL_IDS.facebook) {
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+        (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', window.PIXEL_IDS.facebook);
+        fbq('track', 'PageView');
+    }
+    </script>
+
+    <!-- TikTok Pixel -->
+    <script>
+    if (window.PIXEL_IDS.tiktok) {
+        !function (w, d, t) {
+          w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+        var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+        ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+          ttq.load(window.PIXEL_IDS.tiktok);
+          ttq.page();
+        }(window, document, 'ttq');
+    }
+    </script>
+<style>
+        /* Плавная прокрутка для якорей */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- ДИЗАЙН И СТИЛИ --- */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f8eef2; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; padding-bottom: 20px;}
+
+        img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 5px; }
+
+        .hero { text-align: center; background: #fff; padding-bottom: 0px; }
+        .hero h1 { background-color: #E91E63; color: white; margin: 0; padding: 15px 10px; font-size: 24px; text-transform: uppercase; font-weight: 900;}
+        .hero-subtitle { background: #AD1457; color: white; padding: 10px; font-size: 16px; margin: 0; font-weight: bold;}
+
+        /* Блок характеристик під головним фото */
+        .specs-box {
+            border: 2px solid #E91E63;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin: 10px 15px;
+            background: #fff8fb;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(233, 30, 99, 0.1);
+        }
+        .specs-box h3 {
+            text-align: center;
+            color: #B0124F;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        .specs-box ul { list-style: none; padding: 0; margin: 0; }
+        .specs-box li { padding: 4px 0; font-size: 15px; color: #333; }
+        .specs-box li strong { color: #000; }
+        .specs-box li::before { content: "✔"; color: #E91E63; font-weight: bold; margin-right: 8px; }
+
+        .price-block { text-align: center; padding: 20px; background: #fce4ec; border-bottom: 2px dashed #E91E63; }
+        .old-price { font-size: 20px; color: #888; text-decoration: line-through; }
+        .new-price { font-size: 30px; font-weight: bold; color: #B0124F; margin: 10px 0; }
+        .promo-1plus1 { font-size: 20px; font-weight: 900; color: #B0124F; margin: 15px 0 5px 0; text-transform: uppercase; background: #fce4ec; padding: 10px; border-radius: 8px; border: 2px solid #e91e63; animation: pulse 2s infinite;}
+
+        /* Таймер */
+        .timer-box { margin-top: 15px; }
+        .timer-title { font-weight: bold; color: #333; margin-bottom: 10px; font-size: 16px;}
+        .timer { display: flex; justify-content: center; gap: 10px; }
+        .time-block { background: #333; color: #fff; padding: 10px; border-radius: 5px; min-width: 50px; font-size: 20px; font-weight: bold; text-align: center; }
+        .time-label { display: block; font-size: 12px; font-weight: normal; margin-top: 5px; }
+
+        /* --- БЛОК КОМБО-ЦІН (Темний) --- */
+        .combo-offers {
+            background: #1a1a1a;
+            border-radius: 12px;
+            margin: 20px 15px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .combo-title {
+            text-align: center; text-transform: uppercase; font-weight: 900;
+            font-size: 16px; padding: 15px; letter-spacing: 1px; border-bottom: 1px solid #333;
+        }
+        .combo-row {
+            position: relative; display: flex; justify-content: center; align-items: center;
+            padding: 18px 15px; border-bottom: 1px solid #333; overflow: hidden;
+            cursor: pointer; transition: background .2s;
+        }
+        .combo-row:active { background: #262626; }
+        .combo-row:last-child { border-bottom: none; }
+        .combo-text {
+            font-size: 18px; font-weight: bold; display: flex; align-items: center; gap: 12px; z-index: 2;
+            flex-wrap: wrap; justify-content: center;
+        }
+        .combo-price { font-size: 20px; }
+
+        .discount-badge-red {
+            background: #ff2d6f; color: white; padding: 6px 10px; border-radius: 6px;
+            font-size: 14px; font-weight: bold; display: inline-block; vertical-align: middle;
+        }
+
+        .ribbon {
+            position: absolute; right: -28px; top: 15px; background: #D81B60; color: #fff;
+            padding: 4px 30px; font-size: 12px; font-weight: 900; transform: rotate(45deg);
+            text-transform: uppercase; box-shadow: 0 2px 4px rgba(0,0,0,0.3); z-index: 1;
+        }
+
+        /* Кнопка скролла к заказу */
+        .scroll-btn-wrapper { text-align: center; margin: 20px 15px 0; }
+        .scroll-btn {
+            display: block; background-color: #B0124F; color: white; text-decoration: none;
+            padding: 18px; font-size: 22px; font-weight: 900; border-radius: 5px;
+            text-transform: uppercase; box-shadow: 0 5px 15px rgba(176, 18, 79, 0.4);
+            transition: 0.3s; animation: pulse 2s infinite;
+        }
+        .scroll-btn:hover { background-color: #880E4F; }
+
+        .content { padding: 20px; }
+        .section-title { text-align: center; color: #AD1457; border-bottom: 2px solid #AD1457; padding-bottom: 10px; margin-top: 30px; margin-bottom: 20px; font-weight: 900; text-transform: uppercase;}
+
+        .list-block p { font-size: 16px; line-height: 1.5; text-align: justify;}
+        .list-block ul { list-style: none; padding: 0; }
+        .list-block li { padding: 12px 0; border-bottom: 1px solid #eee; position: relative; padding-left: 35px; font-size: 16px; font-weight: 500;}
+        .list-block li::before { content: "💗"; position: absolute; left: 0; top: 12px; }
+
+        .image-banner { margin-top: 15px; margin-bottom: 15px; text-align: center; }
+        .image-banner img { border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+
+        /* --- КАРТОЧКИ С РАМКОЙ --- */
+        .info-card {
+            background: #f8eef2; border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px;
+            margin-top: 20px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .info-card-text { font-size: 15px; line-height: 1.5; color: #333; margin-top: 0; margin-bottom: 15px; text-align: left; }
+        .info-card img { width: 100%; border-radius: 6px; border: 1px solid #f0f0f0; }
+
+        /* --- КАЛЬКУЛЯТОР ВАРТОСТІ ПРИБИРАННЯ --- */
+        .calc {
+            background: #1a1a1a; color: #fff; border-radius: 12px; margin: 25px 0;
+            overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+        }
+        .calc-head {
+            background: #E91E63; color: #fff; text-align: center; padding: 14px 12px;
+            font-weight: 900; font-size: 17px; text-transform: uppercase; letter-spacing: .5px;
+        }
+        .calc-body { padding: 18px 15px 20px; }
+        .calc-big {
+            text-align: center; line-height: 1; margin-bottom: 4px;
+        }
+        .calc-big b {
+            font-size: 54px; font-weight: 900; color: #F48FB1; display: inline-block;
+        }
+        .calc-big span { font-size: 22px; font-weight: 900; color: #F48FB1; }
+        .calc-sub { text-align: center; font-size: 14px; color: #bdbdbd; margin-bottom: 18px; }
+        .calc-sub #calcFor { color: #E91E63; font-weight: bold; }
+        .calc-field { margin-bottom: 12px; }
+        .calc-field label { display: block; font-size: 13px; color: #bdbdbd; margin-bottom: 6px; font-weight: bold; }
+        .calc-field select {
+            width: 100%; padding: 12px; border-radius: 6px; border: 2px solid #E91E63;
+            background: #2a2a2a; color: #fff; font-size: 16px; font-weight: bold; cursor: pointer;
+            -webkit-appearance: none; appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23E91E63' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 12px center;
+        }
+        .calc-out {
+            background: #262626; border-radius: 8px; padding: 12px 14px; margin-top: 14px;
+            font-size: 15px; line-height: 1.6;
+        }
+        .calc-out div { display: flex; justify-content: space-between; gap: 10px; }
+        .calc-out div + div { margin-top: 6px; padding-top: 6px; border-top: 1px solid #383838; }
+        .calc-out b { color: #F48FB1; white-space: nowrap; }
+        .calc-note { font-size: 12px; color: #9e9e9e; margin-top: 12px; line-height: 1.4; text-align: center; }
+        .calc-vs {
+            display: flex; align-items: center; gap: 10px; background: #fce4ec; color: #333;
+            border-radius: 8px; padding: 12px 14px; margin-top: 14px; font-size: 14px; font-weight: bold;
+        }
+        .calc-vs span { font-size: 26px; }
+
+        /* Карусель відгуків */
+        .reviews { margin-top: 30px; }
+        .reviews-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 15px; padding-bottom: 15px; scrollbar-width: none; -ms-overflow-style: none; }
+        .reviews-carousel::-webkit-scrollbar { display: none; }
+        .review-card { min-width: 85%; scroll-snap-align: center; background: #f9f9f9; padding: 20px 15px; border-radius: 8px; border: 1px solid #e0e0e0; border-top: 4px solid #E91E63; box-sizing: border-box; text-align: center; }
+        .review-header { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .review-img-box { width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 3px solid #E91E63; flex-shrink: 0; margin: 0 auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .review-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .review-name { font-weight: bold; font-size: 18px; color: #222; }
+        .stars { color: #FFC107; font-size: 18px; margin-top: -5px; }
+        .review-text { font-size: 16px; font-style: italic; color: #333; line-height: 1.4; }
+
+        /* Форма */
+        .order-form { background: #fdf0f5; padding: 20px; border-radius: 8px; margin-top: 20px; margin-bottom: 20px; border: 2px solid #e91e63; box-shadow: 0 5px 15px rgba(233, 30, 99, 0.2);}
+        .order-form h2 { text-align: center; margin-top: 0; margin-bottom: 15px; color: #ad1457; font-size: 24px; text-transform: uppercase;}
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px;}
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-size: 16px; background: #fff; }
+        .form-group select { font-weight: bold; color: #B0124F; border: 2px solid #e91e63; cursor: pointer; }
+        .form-group input.err { border: 2px solid #B0124F; background: #fff5f5; }
+        .err-msg { display: none; color: #B0124F; font-size: 13px; font-weight: bold; margin-top: 5px; }
+        .form-group.is-err .err-msg { display: block; }
+        .hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+        .total-row {
+            display: flex; justify-content: space-between; align-items: center;
+            background: #fff; border: 2px dashed #e91e63; border-radius: 8px;
+            padding: 12px 14px; margin-bottom: 15px; font-weight: bold;
+        }
+        .total-row span { font-size: 14px; color: #555; }
+        .total-row b { font-size: 24px; color: #B0124F; }
+
+        .submit-btn { background-color: #B0124F; color: white; border: none; padding: 18px; width: 100%; font-size: 22px; font-weight: 900; border-radius: 5px; cursor: pointer; transition: 0.3s; animation: pulse 2s infinite; text-transform: uppercase;}
+        .submit-btn:hover { background-color: #880E4F; }
+        .submit-btn:disabled { background: #9e9e9e; animation: none; cursor: default; }
+        .pay-note { text-align: center; font-size: 13px; color: #666; margin-top: 10px; }
+
+        .stock-left-badge {
+            text-align: center; margin-top: 15px; font-weight: 900; color: #B0124F;
+            background: #fce4ec; padding: 10px; border-radius: 8px; border: 1px dashed #e91e63;
+            text-transform: uppercase; font-size: 15px;
+        }
+
+        /* Футер с документами */
+        .legal-footer { text-align: center; margin-top: 30px; padding: 20px; background: #eceff1; font-size: 12px; color: #546e7a; border-top: 1px solid #cfd8dc;}
+        .legal-footer p { margin: 5px 0; }
+        .contact-info { margin: 15px 0; padding: 10px; background: #e0e0e0; border-radius: 5px; font-size: 14px; font-weight: bold; color: #333;}
+        .legal-footer a { color: #AD1457; text-decoration: none; font-weight: bold; display: block; margin: 8px 0; font-size: 13px;}
+        .legal-footer a:hover { text-decoration: underline; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        #errorMessage { display: none; text-align: center; padding: 14px; background: #fdecea; color: #8a1c1c; border: 2px solid #e57373; border-radius: 6px; margin-top: 12px; font-weight: bold; font-size: 15px; line-height: 1.4; }
+        #successMessage { display: none; text-align: center; padding: 20px; background: #d4edda; color: #155724; border-radius: 5px; margin-top: 20px; font-weight: bold;}
+        .swipe-hint { text-align: center; font-size: 14px; color: #666; margin-bottom: 10px; font-style: italic; font-weight: bold;}
+
+        /* --- ТАБЛИЦА --- */
+        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px; }
+        .comparison-table th { padding: 10px; background: #f2f2f2; color: #444; border: 1px solid #ddd; }
+        .comparison-table td { padding: 12px 8px; border: 1px solid #ddd; text-align: center; vertical-align: middle; }
+        .comparison-table td:first-child { text-align: left; font-weight: bold; background: #fafafa; width: 35%; }
+        .highlight-cell { background: #fce4ec !important; color: #ad1457; font-weight: 900; width: 35%; }
+        .icon-bad { color: #B0124F; font-weight: bold; font-size: 18px; }
+        .icon-good { color: #2e7d32; font-weight: bold; font-size: 18px; }
+
+        .green-frame {
+            border: 2px solid #2e7d32; padding: 4px 8px; border-radius: 6px; display: inline-block;
+            background: #e8f5e9; color: #1b5e20; font-size: 15px;
+        }
+        img { max-width: 100%; width: 100%; height: auto; display: block; }
+
+        /* --- СПОВІЩЕННЯ ПРО ПОКУПКИ --- */
+        .purchase-notification {
+            position: fixed; bottom: -140px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 400px; background: rgba(255, 255, 255, 0.98);
+            border-left: 4px solid #2e7d32; border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2); display: flex; align-items: center;
+            padding: 12px; z-index: 9999; transition: bottom 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .purchase-notification.show { bottom: 20px; }
+        body.sticky-on .purchase-notification.show { bottom: 92px; }
+        .purchase-notification img {
+            width: 55px; height: 55px; object-fit: cover; border-radius: 50%;
+            margin-right: 15px; margin-left: 0; border: 1px solid #eee;
+        }
+        .notification-text { display: flex; flex-direction: column; text-align: left; line-height: 1.3; }
+        .buyer-name { font-weight: 900; font-size: 14px; color: #333; }
+        .action-text { font-size: 13px; color: #555; margin: 2px 0; }
+        .time-ago { font-size: 11px; color: #888; font-style: italic; }
+
+        /* --- ЛИПКА ПАНЕЛЬ --- */
+        .sticky-bar {
+            position: fixed; left: 0; right: 0; bottom: 0; z-index: 9998;
+            background: rgba(26,26,26,.97); display: flex; align-items: center; gap: 12px;
+            padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+            transform: translateY(130%); transition: transform .3s ease;
+            box-shadow: 0 -4px 14px rgba(0,0,0,.25);
+        }
+        .sticky-bar.show { transform: none; }
+        .sticky-price { color: #fff; line-height: 1.2; }
+        .sticky-price b { display: block; font-size: 20px; font-weight: 900; color: #F48FB1; }
+        .sticky-price s { font-size: 12px; color: #9e9e9e; }
+        .sticky-bar a {
+            flex: 1; text-align: center; background: #B0124F; color: #fff; text-decoration: none;
+            font-weight: 900; font-size: 17px; text-transform: uppercase;
+            padding: 14px 10px; border-radius: 6px;
+        }
+        @media (min-width: 700px) { .sticky-bar { display: none; } }
+    </style>
+</head>
+<body>
+<div id="purchase-notification" class="purchase-notification">
+        <img src="main-product.jpg" alt="PRO-STO">
+        <div class="notification-text">
+            <span class="buyer-name" id="notify-name">Олена, м. Київ</span>
+            <span class="action-text">щойно замовила PRO-STO (1+1=3)</span>
+            <span class="time-ago" id="notify-time">1 хвилину тому</span>
+        </div>
+    </div>
+    <div class="container">
+
+          <div class="hero">
+            <h1>PRO-STO</h1>
+            <p class="hero-subtitle">Малиновий спрей від стійкого бруду на склі, плитці та в кутах</p>
+            <img src="main-product.jpg" alt="PRO-STO спрей-очищувач">
+        </div>
+
+        <div class="price-block">
+            <div class="old-price">Звичайна ціна: 699 грн</div>
+            <div class="new-price">Ціна по акції: 299 грн</div>
+
+            <div class="promo-1plus1">🎁 Залишилось <span id="stockTop">9</span> штук по акції 🎁</div>
+
+            <div class="timer-box">
+                <div class="timer-title">⏳ До кінця акції залишилось:</div>
+                <div class="timer">
+                    <div class="time-block"><span id="hours">02</span><span class="time-label">Годин</span></div>
+                    <div class="time-block">:<span class="time-label">&nbsp;</span></div>
+                    <div class="time-block"><span id="minutes">21</span><span class="time-label">Хвилин</span></div>
+                    <div class="time-block">:<span class="time-label">&nbsp;</span></div>
+                    <div class="time-block"><span id="seconds">30</span><span class="time-label">Секунд</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="combo-offers">
+            <div class="combo-title">ЗАОЩАДЖУЙ ПРЯМО ЗАРАЗ!</div>
+            <div class="combo-row" data-pick="3">
+                <div class="combo-text">
+                    <span>1+1=3</span>
+                    <span>=</span>
+                    <span class="combo-price">598 ₴</span>
+                    <span class="discount-badge-red">знижка 299 грн</span>
+                </div>
+                <div class="ribbon">ХІТ</div>
+            </div>
+            <div class="combo-row" data-pick="6">
+                <div class="combo-text">
+                    <span>2+2=6</span>
+                    <span>=</span>
+                    <span class="combo-price">1196 ₴</span>
+                    <span class="discount-badge-red">знижка 598 грн</span>
+                </div>
+                <div class="ribbon">МЕГА</div>
+            </div>
+        </div>
+
+        <div class="scroll-btn-wrapper">
+            <a href="#order" class="scroll-btn" data-cta="top">ОФОРМИТИ ЗАМОВЛЕННЯ</a>
+        </div>
+
+        <div class="content">
+
+            <h2 class="section-title">Бруд, який не брало ніщо — тепер PRO-STO!</h2>
+            <div class="list-block">
+                <p><strong>PRO-STO</strong> — концентрований спрей для складних забруднень, з якими звичайні засоби не справляються. Він проникає в шар бруду і <strong>розм'якшує його, щоб той легко зійшов ганчіркою</strong> — без годин тертя.</p>
+                <ul>
+                    <li>Відмиває скло, дзеркала та дверцята душової кабіни від нальоту і плям.</li>
+                    <li>Очищає плитку та міжплиточні шви від застарілого бруду й потемнінь.</li>
+                    <li>Добирається в кути, стики та важкодоступні місця, де накопичується бруд.</li>
+                    <li>Справляється з нальотом на змішувачах, раковинах, підвіконнях і рамах.</li>
+                    <li>Зручний розпилювач: наніс, зачекав кілька хвилин, витер — і готово.</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title">Як це працює?</h2>
+            <div class="framed-img"><img src="gifdiesasib.gif" alt=""></div>
+
+            <div class="info-card">
+                <p class="info-card-text">Нанесіть спрей на забруднену ділянку і зачекайте кілька хвилин. Засіб проникає в шар бруду та нальоту на склі й плитці і розм'якшує його, тому залишки легко знімаються вологою ганчіркою або губкою.</p>
+                <img src="pokazodin.jpg" alt="PRO-STO на склі">
+            </div>
+            <div class="image-banner">
+                <img src="gifdiesasib1.gif" alt="Демонстрація дії засобу 1">
+            </div>
+
+            <div class="info-card">
+                <p class="info-card-text">Особливо добре працює там, де бруд роками збирається: у кутах, на стиках, у швах між плиткою та по краях душової кабіни. Не потрібно шкребти та терти до втоми — спрей робить основну роботу за вас.</p>
+                <img src="pokazdva.jpg" alt="PRO-STO на плитці">
+            </div>
+            <div class="image-banner">
+                <img src="gifdiesasib2.gif" alt="Демонстрація дії засобу 2">
+            </div>
+
+            <div class="info-card">
+                <p class="info-card-text">Підходить для ванної кімнати, кухні, балкона, вікон і підвіконь. Один балон замінює кілька різних засобів: скло, кахель, раковини, змішувачі та кути — все відмивається одним спреєм.</p>
+                <img src="pokaztri.jpg" alt="PRO-STO у кутах та швах">
+            </div>
+            <div class="image-banner">
+                <img src="gifdiesasib3.gif" alt="Демонстрація дії засобу 3">
+            </div>
+
+            <!-- ===== КАЛЬКУЛЯТОР ВАРТОСТІ ОДНОГО ПРИБИРАННЯ ===== -->
+            <h2 class="section-title">Скільки коштує одне прибирання?</h2>
+            <div class="calc">
+                <div class="calc-head">Порахуйте самі 👇</div>
+                <div class="calc-body">
+                    <div class="calc-big"><b id="calcPrice">3</b><span> грн</span></div>
+                    <div class="calc-sub">за одне прибирання <span id="calcFor">за акцією 1+1=3</span></div>
+
+                    <div class="calc-field">
+                        <label for="calcPack">Який варіант замовляєте:</label>
+                        <select id="calcPack">
+                            <option value="1">1 балон — 299 грн</option>
+                            <option value="3" selected>1+1=3 (3 балони) — 598 грн</option>
+                            <option value="6">2+2=6 (6 балонів) — 1196 грн</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-field">
+                        <label for="calcFreq">Як часто прибираєте ванну / кухню:</label>
+                        <select id="calcFreq">
+                            <option value="1">1 раз на тиждень</option>
+                            <option value="2" selected>2 рази на тиждень</option>
+                            <option value="3">3 рази на тиждень</option>
+                            <option value="7">Щодня</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-out">
+                        <div><span>Вистачить обробок:</span><b id="calcUses">≈195</b></div>
+                        <div><span>Це приблизно:</span><b id="calcMonths">≈1,9 року</b></div>
+                        <div><span>Одне прибирання:</span><b id="calcPerUse">≈3 грн</b></div>
+                    </div>
+
+                    <div class="calc-vs">
+                        <span>☕</span>
+                        <div>Одна кава на виніс = <b id="calcCoffee">30 прибирань</b> з PRO-STO</div>
+                    </div>
+
+                    <p class="calc-note" id="calcNote">Розрахунок приблизний. Реальна витрата залежить від ступеня забруднення.</p>
+                </div>
+            </div>
+
+            <div class="reviews">
+                <h2 class="section-title">Відгуки покупців</h2>
+                <div class="swipe-hint">👈 Гортайте відгуки вбік 👉</div>
+
+                <div class="reviews-carousel">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-img-box"><img src="otzivodin.jpg" alt="Відгук Олена"></div>
+                            <div class="review-name">Олена, м. Львів</div>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="review-text">"Дверцята душової кабіни були в білих плямах і нальоті, вже думала міняти скло. Побризкала PRO-STO, почекала кілька хвилин і протерла — скло знову прозоре. Взяла акцію 1+1=3, один балон віддала мамі."</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-img-box"><img src="otzivdva.jpg" alt="Відгук Михайло"></div>
+                            <div class="review-name">Михайло, м. Київ</div>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="review-text">"Шви між плиткою у ванній потемніли, я вже й не вірив, що їх можна відмити. Нанесли спрей, пройшлися щіткою — шви посвітлішали на очах. Кути біля ванни теж відмилися. Задоволений."</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-img-box"><img src="otzivtri.jpg" alt="Відгук Ірина"></div>
+                            <div class="review-name">Ірина В.</div>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="review-text">"Мию ним вікна після ремонту, плитку на кухні та кути, куди ганчіркою не дістати. Розпилювач зручний, пахне приємно, витрачається економно. Дякую за швидку доставку!"</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Порівняння з аналогами</h2>
+
+            <div class="image-banner">
+                <img src="realfoto.jpg" alt="Реальне фото товару">
+            </div>
+
+            <div class="info-card" style="padding: 10px;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Характеристика</th>
+                            <th>Звичайні засоби</th>
+                            <th style="background: #E91E63; color: white;">PRO-STO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Застарілий бруд</td>
+                            <td><span class="icon-bad">✘</span> Потрібно довго терти</td>
+                            <td class="highlight-cell"><span class="green-frame"><span class="icon-good" style="color:#1b5e20;">✔</span> Розм'якшує сам</span></td>
+                        </tr>
+                        <tr>
+                            <td>Скло та дзеркала</td>
+                            <td><span class="icon-bad">✘</span> Залишають розводи</td>
+                            <td class="highlight-cell"><span class="icon-good">✔</span> Прозоре скло</td>
+                        </tr>
+                        <tr>
+                            <td>Шви та кути</td>
+                            <td><span class="icon-bad">✘</span> Не дістають</td>
+                            <td class="highlight-cell"><span class="icon-good">✔</span> Проникає всюди</td>
+                        </tr>
+                        <tr>
+                            <td>Скільки засобів треба</td>
+                            <td><span class="icon-bad">✘</span> Окремий на кожну поверхню</td>
+                            <td class="highlight-cell"><span class="icon-good">✔</span> Один на все</td>
+                        </tr>
+                        <tr>
+                            <td>Час на прибирання</td>
+                            <td><span class="icon-bad">✘</span> Години</td>
+                            <td class="highlight-cell"><span class="icon-good">✔</span> Хвилини</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="order-form" id="order">
+                <h2>Оформлення замовлення</h2>
+
+                <form id="orderForm" novalidate>
+                    <div class="form-group">
+                        <label for="quantity">Оберіть варіант замовлення:</label>
+                        <select id="quantity" name="quantity" required>
+                            <option value="1 шт - 299 грн" data-qty="1" data-total="299" data-short="1 балон" selected>1 штука - 299 грн</option>
+                            <option value="Акція 1+1=3 - 598 грн" data-qty="3" data-total="598" data-short="1+1=3 (3 шт)">🔥 ХІТ: 1+1=3 (Отримати 3 шт) - 598 грн</option>
+                            <option value="Акція 2+2=6 - 1196 грн" data-qty="6" data-total="1196" data-short="2+2=6 (6 шт)">🔥 МЕГА: 2+2=6 (Отримати 6 шт) - 1196 грн</option>
+                            <option value="Інша кількість" data-qty="1" data-total="299" data-short="уточнити">Інша кількість (вказати менеджеру)</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="g-name">
+                        <label for="name">Ваше ПІБ:</label>
+                        <input type="text" id="name" name="name" autocomplete="name" placeholder="Введіть Ваше ім'я" enterkeyhint="next">
+                        <div class="err-msg">Будь ласка, введіть ім'я — менеджер звернеться до вас у дзвінку</div>
+                    </div>
+                    <div class="form-group" id="g-phone">
+                        <label for="phone">Номер телефону:</label>
+                        <input type="tel" id="phone" name="phone" inputmode="numeric" autocomplete="tel" placeholder="+380 67 123 45 67" enterkeyhint="done">
+                        <div class="err-msg">Номер має містити 9 цифр після +380</div>
+                    </div>
+
+                    <div class="hp"><label>Не заповнюйте це поле<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+                    <div class="total-row">
+                        <span>До сплати при отриманні:</span>
+                        <b id="formTotal">299 грн</b>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
+                    <p class="pay-note">Оплата при отриманні на пошті. Передоплата не потрібна.</p>
+                    <div class="stock-left-badge">🎁 Залишилось <span id="stockBottom">9</span> штук по акції 🎁</div>
+                </form>
+
+                <div id="errorMessage" role="alert"></div>
+
+                <div id="successMessage">
+                    <h3>✅ Дякуємо за замовлення!</h3>
+                    <p>Наш менеджер зв'яжеться з вами найближчим часом для підтвердження адреси доставки.</p>
+                </div>
+            </div>
+
+            <div class="image-banner">
+                <img src="dostavkainfo.jpg" alt="Інформація про доставку та оплату">
+            </div>
+
+            <div class="legal-footer">
+                <div class="contact-info">
+                    📞 Телефон: +38 (097) 534-12-88<br>
+                    📧 Email: support@cleaner-store.com.ua
+                </div>
+                <p>📍 Адреса: Україна, вулиця Володимира Великого 41, м.Дніпро, Дніпропетровська обл.</p>
+                <a href="https://rustof.bravix.uno/conditions.html" target="_blank">Умови гарантії та повернення</a>
+                <a href="https://rustof.bravix.uno/usersagitment.html" target="_blank">Угода користувача</a>
+                <a href="https://rustof.bravix.uno/oferta.html" target="_blank">Договір оферти</a>
+
+                <a href="https://rustof.bravix.uno/politics.html" target="_blank">Політика конфіденційності</a>
+
+                <p style="margin-top: 15px; color: #90a4ae;">© 2026 Всі права захищені.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sticky-bar" id="stickyBar">
+        <div class="sticky-price"><b id="stickyTotal">299 грн</b><s id="stickyLabel" style="text-decoration:none">1 балон</s></div>
+        <a href="#order" data-cta="sticky">Замовити</a>
+    </div>
+
+    <script>
+    /* =====================================================
+       1. НАЛАШТУВАННЯ — ЄДИНЕ МІСЦЕ ДЛЯ ЗМІН
+       ===================================================== */
+    var CONFIG = {
+        // лендинг і прокси в одному проєкті Vercel, тому шлях відносний.
+        // Адреса .../exec Google Apps Script лежить у змінній GOOGLE_SCRIPT_URL на Vercel.
+        endpoint: '/api/lead',
+        productName: 'PRO-STO',
+        stockLeft: 9,              // цифра в блоках "залишилось N штук"
+        timerSeconds: 2 * 3600 + 21 * 60 + 30,
+        usesPerCan: 60,            // скільки обробок з одного балона (для калькулятора) — уточніть під ваш товар
+        coffeePrice: 60,           // ціна кави на виніс для порівняння, грн
+        supportPhone: '+38 (097) 534-12-88'
+    };
+    var PACK_PRICE = { 1: 299, 3: 598, 6: 1196 };
+
+    /* =====================================================
+       2. ПІКСЕЛІ — лише обгортки. Базовий код стоїть у <head>.
+       Кожен виклик у своєму try/catch, щоб збій пікселя не ламав форму.
+       ===================================================== */
+    function fbTrack(ev, params) {
+        try { if (window.fbq && window.PIXEL_IDS && window.PIXEL_IDS.facebook) fbq('track', ev, params || {}); } catch (e) {}
+    }
+
+    /* =====================================================
+       3. ЗАЛИШОК НА СКЛАДІ
+       ===================================================== */
+    document.getElementById('stockTop').textContent = CONFIG.stockLeft;
+    document.getElementById('stockBottom').textContent = CONFIG.stockLeft;
+
+    /* =====================================================
+       4. ТАЙМЕР (не скидається при перезавантаженні сторінки)
+       ===================================================== */
+    (function () {
+        var KEY = 'promo_end';
+        var end;
+        try { end = parseInt(localStorage.getItem(KEY), 10); } catch (e) {}
+        if (!end || isNaN(end) || end < Date.now()) {
+            end = Date.now() + CONFIG.timerSeconds * 1000;
+            try { localStorage.setItem(KEY, String(end)); } catch (e) {}
+        }
+        var h = document.getElementById('hours'),
+            m = document.getElementById('minutes'),
+            s = document.getElementById('seconds');
+        function pad(n) { return n < 10 ? '0' + n : String(n); }
+        function tick() {
+            var left = Math.max(0, Math.floor((end - Date.now()) / 1000));
+            if (left === 0) {
+                end = Date.now() + CONFIG.timerSeconds * 1000;
+                try { localStorage.setItem(KEY, String(end)); } catch (e) {}
+                left = CONFIG.timerSeconds;
+            }
+            h.textContent = pad(Math.floor(left / 3600));
+            m.textContent = pad(Math.floor((left % 3600) / 60));
+            s.textContent = pad(left % 60);
+        }
+        tick();
+        setInterval(tick, 1000);
+    })();
+
+    /* =====================================================
+       5. СПОВІЩЕННЯ ПРО ПОКУПКИ
+       ===================================================== */
+    (function () {
+        var P = CONFIG.productName;
+        var notifications = [
+            { name: "Олена, м. Київ", time: "1 хвилину тому", action: "щойно замовила " + P + " (1+1=3)" },
+            { name: "Михайло, м. Львів", time: "3 хвилини тому", action: "щойно замовив " + P + " (2+2=6)" },
+            { name: "Ірина, м. Дніпро", time: "5 хвилин тому", action: "щойно замовила " + P },
+            { name: "Олександр, м. Одеса", time: "2 хвилини тому", action: "щойно замовив " + P + " (1+1=3)" },
+            { name: "Анна, м. Харків", time: "щойно", action: "щойно замовила " + P },
+            { name: "Віталій, м. Вінниця", time: "4 хвилини тому", action: "щойно замовив " + P + " (2+2=6)" },
+            { name: "Марія, м. Полтава", time: "1 хвилину тому", action: "щойно замовила " + P + " (1+1=3)" }
+        ];
+        var popup = document.getElementById('purchase-notification');
+        var nameEl = document.getElementById('notify-name');
+        var timeEl = document.getElementById('notify-time');
+        var actionEl = popup.querySelector('.action-text');
+
+        function show() {
+            var b = notifications[Math.floor(Math.random() * notifications.length)];
+            nameEl.textContent = b.name;
+            timeEl.textContent = b.time;
+            actionEl.textContent = b.action;
+            popup.classList.add('show');
+            setTimeout(function () { popup.classList.remove('show'); }, 4000);
+            setTimeout(show, Math.floor(Math.random() * 20000) + 15000);
+        }
+        setTimeout(show, 7000);
+    })();
+
+    /* =====================================================
+       6. ВИБІР ВАРІАНТА + ЦІНА
+       ===================================================== */
+    var form = document.getElementById('orderForm');
+    var qtySelect = document.getElementById('quantity');
+    var formTotal = document.getElementById('formTotal');
+    var stickyTotal = document.getElementById('stickyTotal');
+    var calcPack = document.getElementById('calcPack');
+
+    function selected() {
+        var opt = qtySelect.options[qtySelect.selectedIndex];
+        return {
+            variant: opt.value,
+            qty: parseInt(opt.dataset.qty, 10) || 1,      // реальна кількість одиниць до відправки (1+1=3 → 3)
+            total: parseInt(opt.dataset.total, 10) || 0,  // підсумкова сума замовлення, грн
+            short: opt.dataset.short || ''
+        };
+    }
+    function refreshTotals() {
+        var s = selected();
+        formTotal.textContent = s.total + ' грн';
+        stickyTotal.textContent = s.total + ' грн';
+        document.getElementById('stickyLabel').textContent = s.short;
+    }
+    qtySelect.addEventListener('change', function () {
+        refreshTotals();
+        var s = selected();
+        for (var i = 0; i < calcPack.options.length; i++) {
+            if (parseInt(calcPack.options[i].value, 10) === s.qty) { calcPack.selectedIndex = i; break; }
+        }
+        recalc();
+        fbTrack('AddToCart', { value: s.total, currency: 'UAH', content_name: s.variant });
+    });
+    refreshTotals();
+
+    // клік по комбо-блоку обирає відповідний варіант і веде до форми
+    document.querySelectorAll('.combo-row').forEach(function (row) {
+        row.addEventListener('click', function () {
+            var want = row.dataset.pick;
+            for (var i = 0; i < qtySelect.options.length; i++) {
+                if (qtySelect.options[i].dataset.qty === want) { qtySelect.selectedIndex = i; break; }
+            }
+            qtySelect.dispatchEvent(new Event('change'));
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    /* =====================================================
+       7. КАЛЬКУЛЯТОР ВАРТОСТІ ПРИБИРАННЯ
+       ===================================================== */
+    var calcFreq = document.getElementById('calcFreq');
+    function fmt(n) { return n < 10 ? n.toFixed(1).replace('.0', '').replace('.', ',') : String(Math.round(n)); }
+
+    function recalc() {
+        var cans = parseInt(calcPack.value, 10);
+        var price = PACK_PRICE[cans];
+        var freq = parseInt(calcFreq.value, 10);
+        var uses = cans * CONFIG.usesPerCan;
+        var perUse = price / uses;
+        var months = uses / (freq * 4.33);
+
+        document.getElementById('calcFor').textContent =
+            cans === 1 ? 'за 1 балон' : (cans === 3 ? 'за акцією 1+1=3' : 'за акцією 2+2=6');
+        document.getElementById('calcPrice').textContent = fmt(perUse);
+        document.getElementById('calcUses').textContent = '≈' + uses;
+        document.getElementById('calcPerUse').textContent = '≈' + fmt(perUse) + ' грн';
+        document.getElementById('calcCoffee').textContent = Math.round(CONFIG.coffeePrice / perUse) + ' прибирань';
+
+        var m = Math.round(months);
+        var word = (m % 10 === 1 && m % 100 !== 11) ? 'місяць' : ((m % 10 >= 2 && m % 10 <= 4 && (m % 100 < 10 || m % 100 >= 20)) ? 'місяці' : 'місяців');
+        document.getElementById('calcMonths').textContent = m >= 12
+            ? '≈' + (m / 12).toFixed(1).replace('.0', '').replace('.', ',') + ' року'
+            : '≈' + m + ' ' + word;
+    }
+    calcPack.addEventListener('change', function () {
+        recalc();
+        var cans = calcPack.value;
+        for (var i = 0; i < qtySelect.options.length; i++) {
+            if (qtySelect.options[i].dataset.qty === cans) { qtySelect.selectedIndex = i; break; }
+        }
+        refreshTotals();
+    });
+    calcFreq.addEventListener('change', recalc);
+    recalc();
+
+    /* =====================================================
+       8. МАСКА ТЕЛЕФОНУ +380
+       ===================================================== */
+    var phone = document.getElementById('phone');
+    function digitsOf(v) {
+        var d = String(v).replace(/\D/g, '');
+        if (d.indexOf('380') === 0) d = d.slice(3);
+        else if (d.indexOf('80') === 0) d = d.slice(2);
+        else if (d.indexOf('0') === 0) d = d.slice(1);
+        return d.slice(0, 9);
+    }
+    function formatPhone(v) {
+        var d = digitsOf(v);
+        if (!d) return '';
+        var out = '+380 ' + d.slice(0, 2);
+        if (d.length > 2) out += ' ' + d.slice(2, 5);
+        if (d.length > 5) out += ' ' + d.slice(5, 7);
+        if (d.length > 7) out += ' ' + d.slice(7, 9);
+        return out;
+    }
+    phone.addEventListener('focus', function () { if (!phone.value) phone.value = '+380 '; });
+    phone.addEventListener('input', function () { phone.value = formatPhone(phone.value); });
+    phone.addEventListener('blur', function () { if (phone.value.trim() === '+380') phone.value = ''; });
+
+    /* =====================================================
+       9. UTM + fbclid / ttclid / gclid
+       Забираємо з location.search при першому завантаженні,
+       зберігаємо в sessionStorage. Немає параметра — порожній рядок.
+       ===================================================== */
+    var TRACK_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'ttclid', 'gclid'];
+    var tracking = (function () {
+        var saved = null;
+        try { saved = JSON.parse(sessionStorage.getItem('lead_tracking') || 'null'); } catch (e) {}
+        if (saved && typeof saved === 'object') return saved;   // вже збережено при першому завантаженні
+
+        var p = new URLSearchParams(location.search);
+        var out = {};
+        TRACK_KEYS.forEach(function (k) { out[k] = p.get(k) || ''; });
+        try { sessionStorage.setItem('lead_tracking', JSON.stringify(out)); } catch (e) {}
+        return out;
+    })();
+
+    /* =====================================================
+       10. ВІДПРАВКА ЗАЯВКИ
+       форма → POST /api/lead → Google Apps Script → Google Sheet + LP-CRM
+       ===================================================== */
+    var nameEl = document.getElementById('name');
+    var submitBtn = document.getElementById('submitBtn');
+    var errorBox = document.getElementById('errorMessage');
+    var started = false;
+
+    [nameEl, phone].forEach(function (el) {
+        el.addEventListener('focus', function () {
+            if (!started) { started = true; fbTrack('InitiateCheckout', { value: selected().total, currency: 'UAH' }); }
+        });
+        el.addEventListener('input', function () {
+            el.classList.remove('err');
+            el.closest('.form-group').classList.remove('is-err');
+            errorBox.style.display = 'none';
+        });
+    });
+    function fail(el) {
+        el.classList.add('err');
+        el.closest('.form-group').classList.add('is-err');
+        el.focus();
+    }
+    function showError(code) {
+        var msg = code === 'bad_name'
+            ? 'Перевірте, будь ласка, імʼя — воно має містити щонайменше 2 літери.'
+            : code === 'bad_phone'
+            ? 'Перевірте, будь ласка, номер телефону — має бути 9 цифр після +380.'
+            : 'Не вдалося надіслати замовлення. Спробуйте ще раз або зателефонуйте нам: ' + CONFIG.supportPhone;
+        errorBox.textContent = msg;
+        errorBox.style.display = 'block';
+        if (code === 'bad_name') fail(nameEl);
+        if (code === 'bad_phone') fail(phone);
+    }
+    function resetButton() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'ОФОРМИТИ ЗАМОВЛЕННЯ';
+    }
+    function showThanks() {
+        form.style.display = 'none';
+        errorBox.style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('stickyBar').classList.remove('show');
+        document.body.classList.remove('sticky-on');
+        document.getElementById('order').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errorBox.style.display = 'none';
+
+        var nameVal = nameEl.value.trim().replace(/\s+/g, ' ');
+        var d = digitsOf(phone.value);
+
+        if (nameVal.length < 2 || !/[А-Яа-яЇїІіЄєҐґA-Za-z]{2}/.test(nameVal)) return fail(nameEl);
+        if (d.length !== 9) return fail(phone);
+
+        var s = selected();
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'ВІДПРАВЛЯЄМО...';
+
+        // назви полів НЕ змінювати — Apps Script читає їх за іменами
+        var payload = {
+            name: nameVal,
+            phone: '380' + d,
+            quantity: s.qty,
+            variant: s.variant,
+            total: s.total,
+            page: location.href,
+            website: form.website.value || '',   // honeypot, у людей завжди порожнє
+            utm_source: tracking.utm_source || '',
+            utm_medium: tracking.utm_medium || '',
+            utm_campaign: tracking.utm_campaign || '',
+            utm_content: tracking.utm_content || '',
+            utm_term: tracking.utm_term || '',
+            fbclid: tracking.fbclid || '',
+            ttclid: tracking.ttclid || '',
+            gclid: tracking.gclid || ''
+        };
+
+        fetch(CONFIG.endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        }).then(function (res) {
+            // response.ok НЕ перевіряємо: прокси віддає 200 навіть при збої. Дивимось лише на поле success.
+            return res.json().catch(function () { return { success: false, error: 'bad_response' }; });
+        }).then(function (r) {
+            if (r && r.success === true) {
+                showThanks();
+
+                // пікселі — тільки після підтвердженого success: true, кожен у своєму try/catch
+                try {
+                    if (window.ttq && window.PIXEL_IDS && window.PIXEL_IDS.tiktok) ttq.identify({ phone_number: '+380' + d });
+                } catch (e1) {}
+                try {
+                    if (window.ttq && window.PIXEL_IDS && window.PIXEL_IDS.tiktok) ttq.track('SubmitForm', { value: s.total, currency: 'UAH' });
+                } catch (e2) {}
+                try {
+                    if (window.fbq && window.PIXEL_IDS && window.PIXEL_IDS.facebook) fbq('track', 'Lead', { value: s.total, currency: 'UAH', content_name: s.variant });
+                } catch (e3) {}
+            } else {
+                console.error('LEAD НЕ ЗБЕРЕЖЕНО, відповідь прокси:', r);
+                resetButton();
+                showError(r && r.error);
+            }
+        }).catch(function (err) {
+            console.error('LEAD FETCH FAILED:', err && err.message);
+            resetButton();
+            showError('network');
+        });
+    });
+
+    /* =====================================================
+       11. ЛИПКА ПАНЕЛЬ
+       ===================================================== */
+    (function () {
+        var bar = document.getElementById('stickyBar');
+        var hero = document.querySelector('.hero');
+        var orderBlock = document.getElementById('order');
+        var heroOut = false, orderIn = false;
+        function apply() {
+            if (document.getElementById('successMessage').style.display === 'block') return;
+            var on = heroOut && !orderIn;
+            bar.classList.toggle('show', on);
+            document.body.classList.toggle('sticky-on', on);
+        }
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (en) { heroOut = !en[0].isIntersecting; apply(); }, { threshold: 0 }).observe(hero);
+            new IntersectionObserver(function (en) { orderIn = en[0].isIntersecting; apply(); }, { threshold: 0.2 }).observe(orderBlock);
+        }
+    })();
+
+    document.querySelectorAll('[data-cta]').forEach(function (a) {
+        a.addEventListener('click', function () { fbTrack('ViewContent', { content_name: 'cta-' + a.dataset.cta }); });
+    });
+
+    </script>
+
+</body>
+</html>
