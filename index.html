@@ -24,6 +24,7 @@
         n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
         t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
         (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('set', 'autoConfig', false, window.PIXEL_IDS.facebook);
         fbq('init', window.PIXEL_IDS.facebook);
         fbq('track', 'PageView');
     }
@@ -51,7 +52,7 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f8eef2; color: #333; }
         .container { max-width: 600px; margin: 0 auto; background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; padding-bottom: 20px;}
 
-        img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 5px; }
+        img, video { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 5px; }
 
         .hero { text-align: center; background: #fff; padding-bottom: 0px; }
         .hero h1 { background-color: #E91E63; color: white; margin: 0; padding: 15px 10px; font-size: 24px; text-transform: uppercase; font-weight: 900;}
@@ -274,7 +275,7 @@
             border: 2px solid #2e7d32; padding: 4px 8px; border-radius: 6px; display: inline-block;
             background: #e8f5e9; color: #1b5e20; font-size: 15px;
         }
-        img { max-width: 100%; width: 100%; height: auto; display: block; }
+        img, video { max-width: 100%; width: 100%; height: auto; display: block; }
 
         /* --- СПОВІЩЕННЯ ПРО ПОКУПКИ --- */
         .purchase-notification {
@@ -317,7 +318,7 @@
 </head>
 <body>
 <div id="purchase-notification" class="purchase-notification">
-        <img src="main-product.jpg" alt="PRO-STO">
+        <img src="main-product.webp" alt="PRO-STO" loading="lazy">
         <div class="notification-text">
             <span class="buyer-name" id="notify-name">Олена, м. Київ</span>
             <span class="action-text">щойно замовила PRO-STO (1+1=3)</span>
@@ -329,7 +330,7 @@
           <div class="hero">
             <h1>PRO-STO</h1>
             <p class="hero-subtitle">Малиновий спрей від стійкого бруду на склі, плитці та в кутах</p>
-            <img src="main-product.jpg" alt="PRO-STO спрей-очищувач">
+            <img src="main-product.webp" alt="PRO-STO спрей-очищувач">
         </div>
 
         <div class="price-block">
@@ -391,16 +392,16 @@
             </div>
 
             <h2 class="section-title">Як це працює?</h2>
-            <div class="framed-img"><img src="gifdiesasib.gif" alt=""></div>
+            <div class="framed-img"><video src="gifdiesasib.mp4" autoplay muted loop playsinline></video></div>
 
             <div class="info-card">
                 <p class="info-card-text">Нанесіть спрей на забруднену ділянку і зачекайте кілька хвилин. Засіб проникає в шар бруду та нальоту на склі й плитці і розм'якшує його, тому залишки легко знімаються вологою ганчіркою або губкою.</p>
-                <img src="pokazodin.jpg" alt="Переваги Bathroom Cleaner">
+                <img src="pokazodin.webp" alt="Переваги Bathroom Cleaner" loading="lazy">
             </div>
 
             <div class="info-card">
                 <p class="info-card-text">Особливо добре працює там, де бруд роками збирається: у кутах, на стиках, у швах між плиткою та по краях душової кабіни. Не потрібно шкребти та терти до втоми — спрей робить основну роботу за вас.</p>
-                <img src="pokazdva.jpg" alt="Зона застосування для чистих поверхонь">
+                <img src="pokazdva.webp" alt="Зона застосування для чистих поверхонь" loading="lazy">
             </div>
 
             <!-- ===== КАЛЬКУЛЯТОР ВАРТОСТІ ОДНОГО ПРИБИРАННЯ ===== -->
@@ -452,7 +453,7 @@
                 <div class="reviews-carousel">
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-img-box"><img src="otzivodin.jpg" alt="Відгук Олена"></div>
+                            <div class="review-img-box"><img src="otzivodin.webp" alt="Відгук Олена" loading="lazy"></div>
                             <div class="review-name">Олена, м. Львів</div>
                             <div class="stars">⭐⭐⭐⭐⭐</div>
                         </div>
@@ -461,7 +462,7 @@
 
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-img-box"><img src="otzivdva.jpg" alt="Відгук Михайло"></div>
+                            <div class="review-img-box"><img src="otzivdva.webp" alt="Відгук Михайло" loading="lazy"></div>
                             <div class="review-name">Михайло, м. Київ</div>
                             <div class="stars">⭐⭐⭐⭐⭐</div>
                         </div>
@@ -470,7 +471,7 @@
 
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-img-box"><img src="otzivtri.jpg" alt="Відгук Ірина"></div>
+                            <div class="review-img-box"><img src="otzivtri.webp" alt="Відгук Ірина" loading="lazy"></div>
                             <div class="review-name">Ірина В.</div>
                             <div class="stars">⭐⭐⭐⭐⭐</div>
                         </div>
@@ -482,7 +483,7 @@
             <h2 class="section-title">Порівняння з аналогами</h2>
 
             <div class="image-banner">
-                <img src="realfoto.jpg" alt="Реальне фото товару">
+                <img src="realfoto.webp" alt="Реальне фото товару" loading="lazy">
             </div>
 
             <div class="info-card" style="padding: 10px;">
@@ -569,7 +570,7 @@
             </div>
 
             <div class="image-banner">
-                <img src="dostavkainfo.jpg" alt="Інформація про доставку та оплату">
+                <img src="dostavkainfo.webp" alt="Інформація про доставку та оплату" loading="lazy">
             </div>
 
             <div class="legal-footer">
@@ -916,6 +917,9 @@
                 try {
                     if (window.fbq && window.PIXEL_IDS && window.PIXEL_IDS.facebook) fbq('track', 'Lead', { value: s.total, currency: 'UAH', content_name: s.variant });
                 } catch (e3) {}
+                try {
+                    fbq('track', 'Purchase', { value: s.total, currency: 'UAH' });
+                } catch (e4) {}
             } else {
                 console.error('LEAD НЕ ЗБЕРЕЖЕНО, відповідь прокси:', r);
                 resetButton();
