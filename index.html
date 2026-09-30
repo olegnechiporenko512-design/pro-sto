@@ -881,8 +881,8 @@
         var nameVal = nameEl.value.trim().replace(/\s+/g, ' ');
         var d = digitsOf(phone.value);
 
-        if (nameVal.length < 2 || !/[А-Яа-яЇїІіЄєҐґA-Za-z]{2}/.test(nameVal)) return fail(nameEl);
-        if (d.length !== 9) return fail(phone);
+        if (nameVal.length < 2 || !/[А-Яа-яЇїІіЄєҐґA-Za-z]{2}/.test(nameVal)) return showError('bad_name');
+        if (d.length !== 9) return showError('bad_phone');
 
         var s = selected();
         submitBtn.disabled = true;

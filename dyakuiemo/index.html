@@ -25,43 +25,50 @@
   </main>
   <script>
     var PIXEL_ID = "1749190629525376";
-    function escapeHtml(value) {
-      return String(value).replace(/[&<>"']/g, function (ch) {
-        return ({ "&": "&", "<": "<", ">": ">", '"': """, "'": "&#39;" })[ch];
-      });
+    function textNode(tag, value) {
+      var el = document.createElement(tag);
+      el.textContent = value == null ? "" : String(value);
+      return el;
     }
     var order = null;
     try { order = JSON.parse(sessionStorage.getItem("dyakuiemo_order") || "null"); } catch (e) { order = null; }
     var box = document.getElementById("text");
     if (!order || !order.order_id || !order.phone || !order.name) {
-      box.innerHTML = '<h1>Дякуємо!</h1><p><a href="/">На головну</a></p>';
+      var p = document.createElement("p");
+      var a = document.createElement("a");
+      a.href = "/";
+      a.textContent = "На головну";
+      p.appendChild(a);
+      box.appendChild(textNode("h1", "Дякуємо!"));
+      box.appendChild(p);
     } else {
-      box.innerHTML = '<h1>Дякуємо, ' + escapeHtml(order.name) + '! Замовлення №' + escapeHtml(order.order_id) + ' прийнято</h1>'
-        + (order.product ? '<p>' + escapeHtml(order.product) + '</p>' : '')
-        + '<p>' + escapeHtml(order.variant || '') + '</p>'
-        + '<p>Сума: ' + escapeHtml(String(order.total)) + ' грн</p>'
-        + '<p>Менеджер зателефонує найближчим часом для підтвердження. Оплата при отриманні на Новій Пошті.</p>';
+      box.appendChild(textNode("h1", "Дякуємо, " + order.name + "! Замовлення №" + order.order_id + " прийнято"));
+      if (order.product) box.appendChild(textNode("p", order.product));
+      if (order.variant) box.appendChild(textNode("p", order.variant));
+      box.appendChild(textNode("p", "Сума: " + order.total + " грн"));
+      box.appendChild(textNode("p", "Менеджер зателефонує найближчим часом для підтвердження. Оплата при отриманні на Новій Пошті."));
       var fn = String(order.name).trim().toLowerCase();
       try {
-        fbq('set', 'autoConfig', false, PIXEL_ID);
-        fbq('init', PIXEL_ID, { ph: order.phone, fn: fn });
-        fbq('track', 'PageView');
+        fbq("set", "autoConfig", false, PIXEL_ID);
+        fbq("init", PIXEL_ID, { ph: String(order.phone), fn: fn });
+        fbq("track", "PageView");
       } catch (e1) {}
-      var key = 'sent_' + order.order_id;
-      if (localStorage.getItem(key) !== '1') {
-        localStorage.setItem(key, '1');
+      var key = "sent_" + order.order_id;
+      if (localStorage.getItem(key) !== "1") {
         try {
-          fbq('track', 'Lead', { value: order.total, currency: 'UAH', content_name: order.variant }, { eventID: order.order_id });
-          fbq('track', 'Purchase', { value: order.total, currency: 'UAH', content_name: order.variant }, { eventID: order.order_id });
+          fbq("track", "Lead", { value: Number(order.total), currency: "UAH", content_name: order.variant }, { eventID: order.order_id });
+          fbq("track", "Purchase", { value: Number(order.total), currency: "UAH", content_name: order.variant }, { eventID: order.order_id });
         } catch (e2) {}
         try {
           if (window.ttq && window.ttq.identify && window.ttq.track) {
-            ttq.identify({ phone_number: '+' + order.phone });
-            ttq.track('SubmitForm', { value: order.total, currency: 'UAH' }, { event_id: order.order_id });
+            ttq.identify({ phone_number: "+" + order.phone });
+            ttq.track("SubmitForm", { value: Number(order.total), currency: "UAH" }, { event_id: order.order_id });
           }
         } catch (e3) {}
+        try { localStorage.setItem(key, "1"); } catch (e4) {}
       }
     }
   </script>
+
 </body>
 </html>
