@@ -1,5 +1,8 @@
 {
   "name": "pro-sto",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@vercel/functions": "^3.9.9"
+  }
 }

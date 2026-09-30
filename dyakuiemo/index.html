@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Дякуємо</title>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  </script>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f8eef2; color: #333; font-family: "Segoe UI", Tahoma, sans-serif; }
+    main { width: min(640px, calc(100% - 32px)); padding: 28px 16px 48px; }
+    h1 { font-size: 28px; line-height: 1.25; margin: 0 0 16px; }
+    p { margin: 8px 0; line-height: 1.5; }
+    a { color: #ad1457; }
+    #upsell:empty { display: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="text"></div>
+    <div id="upsell"></div>
+  </main>
+  <script>
+    var PIXEL_ID = "1749190629525376";
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, function (ch) {
+        return ({ "&": "&", "<": "<", ">": ">", '"': """, "'": "&#39;" })[ch];
+      });
+    }
+    var order = null;
+    try { order = JSON.parse(sessionStorage.getItem("dyakuiemo_order") || "null"); } catch (e) { order = null; }
+    var box = document.getElementById("text");
+    if (!order || !order.order_id || !order.phone || !order.name) {
+      box.innerHTML = '<h1>Дякуємо!</h1><p><a href="/">На головну</a></p>';
+    } else {
+      box.innerHTML = '<h1>Дякуємо, ' + escapeHtml(order.name) + '! Замовлення №' + escapeHtml(order.order_id) + ' прийнято</h1>'
+        + (order.product ? '<p>' + escapeHtml(order.product) + '</p>' : '')
+        + '<p>' + escapeHtml(order.variant || '') + '</p>'
+        + '<p>Сума: ' + escapeHtml(String(order.total)) + ' грн</p>'
+        + '<p>Менеджер зателефонує найближчим часом для підтвердження. Оплата при отриманні на Новій Пошті.</p>';
+      var fn = String(order.name).trim().toLowerCase();
+      try {
+        fbq('set', 'autoConfig', false, PIXEL_ID);
+        fbq('init', PIXEL_ID, { ph: order.phone, fn: fn });
+        fbq('track', 'PageView');
+      } catch (e1) {}
+      var key = 'sent_' + order.order_id;
+      if (localStorage.getItem(key) !== '1') {
+        localStorage.setItem(key, '1');
+        try {
+          fbq('track', 'Lead', { value: order.total, currency: 'UAH', content_name: order.variant }, { eventID: order.order_id });
+          fbq('track', 'Purchase', { value: order.total, currency: 'UAH', content_name: order.variant }, { eventID: order.order_id });
+        } catch (e2) {}
+        try {
+          if (window.ttq && window.ttq.identify && window.ttq.track) {
+            ttq.identify({ phone_number: '+' + order.phone });
+            ttq.track('SubmitForm', { value: order.total, currency: 'UAH' }, { event_id: order.order_id });
+          }
+        } catch (e3) {}
+      }
+    }
+  </script>
+</body>
+</html>

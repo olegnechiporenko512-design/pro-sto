@@ -779,14 +779,25 @@
     var phone = document.getElementById('phone');
     function digitsOf(v) {
         var d = String(v).replace(/\D/g, '');
-        if (d.indexOf('380') === 0) d = d.slice(3);
-        else if (d.indexOf('80') === 0) d = d.slice(2);
-        else if (d.indexOf('0') === 0) d = d.slice(1);
+        while (d.indexOf('380') === 0 || d.indexOf('80') === 0 || d.indexOf('0') === 0) {
+            if (d.indexOf('380') === 0) d = d.slice(3);
+            else if (d.indexOf('80') === 0) d = d.slice(2);
+            else d = d.slice(1);
+        }
         return d.slice(0, 9);
+    }
+    function cookieValue(name) {
+        var prefix = name + '=';
+        var parts = document.cookie.split(';');
+        for (var i = 0; i < parts.length; i++) {
+            var item = parts[i].replace(/^\s+/, '');
+            if (item.indexOf(prefix) === 0) return decodeURIComponent(item.slice(prefix.length));
+        }
+        return '';
     }
     function formatPhone(v) {
         var d = digitsOf(v);
-        if (!d) return '';
+        if (!d) return '+380 ';
         var out = '+380 ' + d.slice(0, 2);
         if (d.length > 2) out += ' ' + d.slice(2, 5);
         if (d.length > 5) out += ' ' + d.slice(5, 7);
@@ -844,7 +855,7 @@
             ? 'Перевірте, будь ласка, імʼя — воно має містити щонайменше 2 літери.'
             : code === 'bad_phone'
             ? 'Перевірте, будь ласка, номер телефону — має бути 9 цифр після +380.'
-            : 'Не вдалося надіслати замовлення. Спробуйте ще раз або зателефонуйте нам: ' + CONFIG.supportPhone;
+            : 'Не вдалося відправити, спробуйте ще раз';
         errorBox.textContent = msg;
         errorBox.style.display = 'block';
         if (code === 'bad_name') fail(nameEl);
@@ -893,7 +904,9 @@
             utm_term: tracking.utm_term || '',
             fbclid: tracking.fbclid || '',
             ttclid: tracking.ttclid || '',
-            gclid: tracking.gclid || ''
+            gclid: tracking.gclid || '',
+            fbp: cookieValue('_fbp'),
+            fbc: cookieValue('_fbc')
         };
 
         fetch(CONFIG.endpoint, {
@@ -904,22 +917,21 @@
             // response.ok НЕ перевіряємо: прокси віддає 200 навіть при збої. Дивимось лише на поле success.
             return res.json().catch(function () { return { success: false, error: 'bad_response' }; });
         }).then(function (r) {
-            if (r && r.success === true) {
-                showThanks();
-
-                // пікселі — тільки після підтвердженого success: true, кожен у своєму try/catch
+            if (r && r.success === true && r.order_id) {
                 try {
-                    if (window.ttq && window.PIXEL_IDS && window.PIXEL_IDS.tiktok) ttq.identify({ phone_number: '+380' + d });
-                } catch (e1) {}
-                try {
-                    if (window.ttq && window.PIXEL_IDS && window.PIXEL_IDS.tiktok) ttq.track('SubmitForm', { value: s.total, currency: 'UAH' });
-                } catch (e2) {}
-                try {
-                    if (window.fbq && window.PIXEL_IDS && window.PIXEL_IDS.facebook) fbq('track', 'Lead', { value: s.total, currency: 'UAH', content_name: s.variant });
-                } catch (e3) {}
-                try {
-                    fbq('track', 'Purchase', { value: s.total, currency: 'UAH' });
-                } catch (e4) {}
+                    sessionStorage.setItem('dyakuiemo_order', JSON.stringify({
+                        order_id: r.order_id,
+                        name: nameVal,
+                        phone: '380' + d,
+                        variant: s.variant,
+                        quantity: s.qty,
+                        total: s.total,
+                        product: 'Малиновий спрей PRO-STO'
+                    }));
+                } catch (e0) {}
+                location.assign('/dyakuiemo');
+            } else if (r && r.success === true) {
+                location.assign('/dyakuiemo');
             } else {
                 console.error('LEAD НЕ ЗБЕРЕЖЕНО, відповідь прокси:', r);
                 resetButton();
